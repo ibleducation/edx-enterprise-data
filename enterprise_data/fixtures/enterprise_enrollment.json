@@ -1,0 +1,33 @@
+[
+  {
+    "model": "enterprise_data.EnterpriseEnrollment",
+    "pk": 1,
+    "fields": {
+      "enterprise_id": "0381d3cb033846d48a5cb1475b589d7f",
+      "enterprise_name": "Enterprise 1",
+      "lms_user_id": "11",
+      "enterprise_user_id": "1",
+      "course_id": "edX/Open_DemoX/edx_demo_course",
+      "enrollment_created_timestamp": "2014-06-27 16:02:38",
+      "user_current_enrollment_mode": "verified",
+      "consent_granted": 1,
+      "letter_grade": "Pass",
+      "has_passed": 1,
+      "passed_timestamp": "2017-05-09 16:27:34.690065",
+      "enterprise_sso_user_id": "harry",
+      "course_title": "All about acceptance testing!",
+      "course_start": "2016-09-01T00:00:00Z",
+      "course_end": "2016-12-01T00:00:00Z",
+      "course_pacing_type": "instructor_paced",
+      "course_duration_weeks": "8",
+      "course_min_effort": 2,
+      "course_max_effort": 4,
+      "user_account_creation_date": "2015-02-12 23:14:35",
+      "user_email": "test@example.com",
+      "user_username": "test_user",
+      "user_age": 34,
+      "user_level_of_education": "a",
+      "user_gender": "m"
+    }
+  }
+]

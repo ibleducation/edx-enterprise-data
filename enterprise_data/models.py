@@ -17,11 +17,9 @@ class EnterpriseEnrollment(models.Model):
     """
     class Meta:
         app_label = 'enterprise_data'
+        db_table = 'enterprise_enrollment'
         verbose_name = _("Enterprise Enrollment")
         verbose_name_plural = _("Enterprise Enrollments")
-
-        # This schema is driven by the analytics-data-pipeline
-        managed = False
 
     enterprise_id = models.CharField(max_length=255)
     enterprise_name = models.CharField(max_length=255)
@@ -48,8 +46,6 @@ class EnterpriseEnrollment(models.Model):
     user_age = models.PositiveIntegerField()
     user_level_of_education = models.CharField(max_length=6)
     user_gender = models.CharField(max_length=6)
-    user_country_code = models.CharField(max_length=3)
-    country_name = models.CharField(max_length=64)
 
     def __str__(self):
         """

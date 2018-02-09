@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-Views for enterprise api version 1 endpoint.
+Views for enterprise api version 0 endpoint.
 """
 from __future__ import absolute_import, unicode_literals
 
 from logging import getLogger
 
-from rest_framework import generics, serializers
-from rest_framework.decorators import detail_route
+from rest_framework import generics
 
-from enterprise_data.api.v0 import models
+from enterprise_data import models
+from enterprise_data.api.v0 import serializers
 
 LOGGER = getLogger(__name__)
 
 class EnterpriseEnrollmentsView(generics.ListAPIView):
-    serializer_class = serializers.ModelSerializer
+    serializer_class = serializers.EnterpriseEnrollmentSerializer
 
     def get_queryset(self):
         """
