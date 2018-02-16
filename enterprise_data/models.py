@@ -43,9 +43,6 @@ class EnterpriseEnrollment(models.Model):
     user_account_creation_date = models.DateTimeField(null=True)
     user_email = models.CharField(max_length=255, null=True)
     user_username = models.CharField(max_length=255, null=True)
-    user_age = models.PositiveIntegerField(null=True)
-    user_level_of_education = models.CharField(max_length=255, null=True)
-    user_gender = models.CharField(max_length=32, null=True)
 
     def __str__(self):
         """

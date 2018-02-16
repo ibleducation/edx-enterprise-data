@@ -24,12 +24,10 @@
       "course_max_effort": 4,
       "user_account_creation_date": "2015-02-12 23:14:35",
       "user_email": "test@example.com",
-      "user_username": "test_user",
-      "user_age": 34,
-      "user_level_of_education": "a",
-      "user_gender": "m"
+      "user_username": "test_user"
     }
-  },{
+  },
+  {
     "model": "enterprise_data.EnterpriseEnrollment",
     "pk": 2,
     "fields": {
@@ -54,10 +52,7 @@
       "course_max_effort": 4,
       "user_account_creation_date": "2015-02-12 23:14:35",
       "user_email": "test@example.com",
-      "user_username": "test_user",
-      "user_age": 34,
-      "user_level_of_education": "a",
-      "user_gender": "m"
+      "user_username": "test_user"
     }
   },
   {
@@ -85,10 +80,7 @@
       "course_max_effort": 4,
       "user_account_creation_date": "2015-02-12 23:14:35",
       "user_email": "test2@example.com",
-      "user_username": "test_user2",
-      "user_age": 21,
-      "user_level_of_education": "a",
-      "user_gender": "f"
+      "user_username": "test_user2"
     }
   }
 ]
