@@ -21,38 +21,38 @@ class EnterpriseEnrollment(models.Model):
         verbose_name = _("Enterprise Enrollment")
         verbose_name_plural = _("Enterprise Enrollments")
 
-    enterprise_id = models.CharField(max_length=255)
+    enterprise_id = models.CharField(max_length=32)
     enterprise_name = models.CharField(max_length=255)
-    lms_user_id = models.CharField(max_length=255)
-    enterprise_user_id = models.CharField(max_length=255)
-    course_id = models.CharField(max_length=255, null=False, help_text='The course the learner is enrolled in.')
+    lms_user_id = models.PositiveIntegerField()
+    enterprise_user_id = models.PositiveIntegerField()
+    course_id = models.CharField(max_length=255, help_text='The course the learner is enrolled in.')
     enrollment_created_timestamp = models.DateTimeField()
-    user_current_enrollment_mode = models.CharField(max_length=64)
-    consent_granted = models.BooleanField()
-    letter_grade = models.CharField(max_length=1)
-    has_passed = models.BooleanField()
-    passed_timestamp = models.DateTimeField()
-    enterprise_sso_user_id = models.CharField(max_length=255)
-    course_title = models.CharField(max_length=255)
-    course_start = models.DateTimeField()
-    course_end = models.DateTimeField()
-    course_pacing_type = models.CharField(max_length=255)
-    course_duration_weeks = models.PositiveIntegerField()
-    course_min_effort = models.CharField(max_length=100)
-    course_max_effort = models.CharField(max_length=100)
-    user_account_creation_date = models.DateTimeField()
-    user_email = models.CharField(max_length=255)
-    user_username = models.CharField(max_length=255)
-    user_age = models.PositiveIntegerField()
-    user_level_of_education = models.CharField(max_length=6)
-    user_gender = models.CharField(max_length=6)
+    user_current_enrollment_mode = models.CharField(max_length=32)
+    consent_granted = models.BooleanField(default=False)
+    letter_grade = models.CharField(max_length=32, null=True)
+    has_passed = models.BooleanField(default=False)
+    passed_timestamp = models.DateTimeField(null=True)
+    enterprise_sso_user_id = models.CharField(max_length=255, null=True)
+    course_title = models.CharField(max_length=255, null=True)
+    course_start = models.DateTimeField(null=True)
+    course_end = models.DateTimeField(null=True)
+    course_pacing_type = models.CharField(max_length=32, null=True)
+    course_duration_weeks = models.CharField(max_length=32, null=True)
+    course_min_effort = models.PositiveIntegerField(null=True)
+    course_max_effort = models.PositiveIntegerField(null=True)
+    user_account_creation_date = models.DateTimeField(null=True)
+    user_email = models.CharField(max_length=255, null=True)
+    user_username = models.CharField(max_length=255, null=True)
+    user_age = models.PositiveIntegerField(null=True)
+    user_level_of_education = models.CharField(max_length=255, null=True)
+    user_gender = models.CharField(max_length=32, null=True)
 
     def __str__(self):
         """
         Return a human-readable string representation of the object.
         """
-        return "<Enterprise Enrollment for {learner} in {course}>".format(
-            learner=self.enterprise_user_id,
+        return "<Enterprise Enrollment for user {user} in {course}>".format(
+            user=self.enterprise_user_id,
             course=self.course_id
         )
 
